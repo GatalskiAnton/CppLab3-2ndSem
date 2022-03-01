@@ -1,19 +1,19 @@
 #include <iostream>
 #pragma once
 
+template<class T>
+class Node
+{
+public:
+	Node* next_;
+	T data_;
+	Node(Node* next, T data) : next_(next), data_(data) {};
+};
 
-template<typename T>
+template<class T>
 class List
 {
-private:
-	template<typename T>
-	class Node
-	{
-	public:
-		Node* next_;
-		T data_;
-		Node(Node* next, T data) : next_(next), data_(data) {};
-	};
+protected:
 	int size_;
 	Node<T>* head_;
 public:
@@ -24,7 +24,7 @@ public:
 	inline void remove(const T& data);
 };
 
-template<typename T>
+template<class T>
 inline void List<T>::push(const T& data)
 {
 	if (size_ == 0)
@@ -45,7 +45,7 @@ inline void List<T>::push(const T& data)
 	++size_;
 }
 
-template<typename T>
+template<class T>
 inline T List<T>::front()
 {
 	Node<T>* temp = head_;
@@ -57,7 +57,7 @@ inline T List<T>::front()
 	return temp->data_;
 }
 
-template<typename T>
+template<class T>
 inline void List<T>::print()
 {
 	Node<T>* temp = head_;
@@ -68,7 +68,7 @@ inline void List<T>::print()
 	}
 }
 
-template<typename T>
+template<class T>
 inline void List<T>::remove(const T& data)
 {
 	Node<T>* temp = head_;
