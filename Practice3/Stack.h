@@ -13,6 +13,7 @@ public:
 	inline T top();
 	inline void pop();
 	inline void print();
+	inline bool isEmpty();
 };
 
 template<typename T>
@@ -33,6 +34,7 @@ template<typename T>
 inline void Stack<T>::pop()
 {
 	stack_.front();
+	--size_;
 }
 
 template<typename T>
@@ -43,4 +45,10 @@ inline void Stack<T>::print()
 	{
 		std::cout << this->top() << "\n";
 	}
+}
+
+template<typename T>
+inline bool Stack<T>::isEmpty()
+{
+	return !size_;
 }

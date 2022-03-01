@@ -140,9 +140,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Practice3.cpp" />
+    <ClCompile Include="ReversePolish.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h" />
+    <ClInclude Include="ReversePolish.h" />
     <ClInclude Include="SortedList.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
