@@ -4,8 +4,6 @@
 template<class T>
 class SortedList:public List<T>
 {
-private:
-
 public:
 	void push(const T& data);
 };

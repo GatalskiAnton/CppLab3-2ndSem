@@ -14,6 +14,7 @@ public:
 	inline void pop();
 	inline void print();
 	inline bool isEmpty();
+	inline int getSize();
 };
 
 template<typename T>
@@ -51,4 +52,10 @@ template<typename T>
 inline bool Stack<T>::isEmpty()
 {
 	return !size_;
+}
+
+template<typename T>
+inline int Stack<T>::getSize()
+{
+	return size_;
 }
