@@ -12,12 +12,35 @@ public:
 };
 
 template<class T>
-class List
+class List 
 {
 protected:
 	int size_;
 	Node<T>* head_;
 public:
+	class Iterator : public std::iterator<std::forward_iterator_tag, T>
+	{
+	public:
+		Node<T>* node_;
+		Iterator(Node<T>* node = nullptr) : node_(node) {};
+		bool operator==(const Iterator& node)
+		{ 
+			return node_ == node.node_;
+		}
+		bool operator!=(const Iterator& node)
+		{
+			return node != *this;
+		}
+		Iterator& operator=(const Iterator& node) {
+			if (this != node)
+				node_ = node.node_;
+			return *this;
+		}
+		const Iterator& operator++() {
+			node_ = node_->next;
+			return *this;
+		}
+	};
 	List() :size_(0), head_(nullptr){};
 	inline void push(const T& data);
 	inline T front();
